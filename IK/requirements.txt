@@ -1,0 +1,16 @@
+# Install into a virtual environment (the class uses one called "WR26"):
+#     python -m venv .venv && .venv\Scripts\activate      (Windows)
+#     pip install -r requirements.txt
+#
+# Versions below are the ones this module was developed and validated against;
+# the lower bounds are what actually matters.
+
+numpy>=2.0,<3
+scipy>=1.11
+matplotlib>=3.8
+gdown>=5.1            # used only by get_data.py to fetch the data zip
+
+# OpenSim 4.x.  A pip wheel works in the WR26 venv (opensim==4.6); on platforms
+# without a wheel, install it with conda instead:
+#     conda install opensim-org::opensim
+opensim>=4.5
