@@ -1,0 +1,26 @@
+# OpenSim tutorials + examples -- local environment (no conda, no Google Colab).
+#
+#   python -m venv .venv
+#   .venv\Scripts\activate            (Windows)   |   source .venv/bin/activate   (macOS/Linux)
+#   pip install -r requirements.txt
+#   jupyter lab
+#
+# The versions below are what this material was validated against; the lower
+# bounds are what actually matters.
+
+# OpenSim 4.6+.  Official PyPI wheels cover Windows / macOS / Linux and
+# Python 3.11-3.13, and INCLUDE Moco (Tutorials 7 and 8).  On a platform with no
+# wheel, install it with conda instead:  conda install opensim-org::opensim
+opensim>=4.6
+
+numpy>=1.24
+scipy>=1.11
+matplotlib>=3.8
+
+pandas>=2.0            # osim.report.Report  (Tutorial 8)
+scikit-learn>=1.3      # muscle-synergy NNMF (Tutorial 8, Section 8.6)
+ipywidgets>=8.1        # interactive menus   (Tutorial 8)
+
+jupyterlab>=4.0        # to open and run the notebooks
+
+gdown>=5.1            # optional: only used by examples/get_example_data.py as a fallback

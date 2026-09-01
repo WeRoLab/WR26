@@ -1,0 +1,40 @@
+# ---- tutorial working directories (created by tutorial_setup.prepare) ----
+/_work/
+
+# ---- example data fetched by examples/get_example_data.py ----
+# The example scripts are tracked; their input data is not (fetch it with
+# `python examples/get_example_data.py`).  Keep the one small bundled model.
+/examples/**/*.osim
+/examples/**/*.sto
+/examples/**/*.mot
+/examples/**/*.trc
+/examples/**/*.c3d
+/examples/**/*.xml
+/examples/**/*.omoco
+!/examples/dynamic_walker_example_model.osim
+_opensim_core_source.tar.gz
+
+# ---- generated outputs / logs ----
+*.log
+*.pdf
+*.omoco
+results/
+# stray solver output if a notebook/example is run outside its working dir
+/*.sto
+/*.mot
+/*.osim
+/*.omoco
+/Geometry/
+
+# ---- python / jupyter ----
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.ipynb_checkpoints/
+
+# ---- OS / editor cruft ----
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/

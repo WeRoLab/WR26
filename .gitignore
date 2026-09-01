@@ -1,0 +1,38 @@
+# Repo-wide ignores.  Each module (IK/, OpenSim_Python_Examples_Tutorials/) also
+# has its own .gitignore for path-specific data and outputs.
+
+# ---- Python ----
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+env/
+.pytest_cache/
+
+# ---- Jupyter ----
+.ipynb_checkpoints/
+
+# ---- run outputs: OpenSim / Moco / analysis ----
+*.log
+*.omoco
+results/
+_work/
+
+# ---- MATLAB scratch ----
+*.asv
+*.m~
+
+# ---- editors / IDEs ----
+.vscode/
+.idea/
+*.swp
+*~
+
+# ---- OS cruft ----
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ---- local machine settings ----
+.claude/settings.local.json
