@@ -38,7 +38,7 @@ zip manually.  `s0` / `s1` will remind you to run this if the data is missing.
 ## Running
 
 ```
-cd "IK Learning Module/solution"
+cd Lectures/IK/solution
 python s0_prepare_data.py      # raw C3D  -> TRC + GRF .mot + events        (GIVEN)
 python s1_prepare_model.py     # scaled model -> sagittal-locked model      (GIVEN)
 python s2_opensim_ik.py        # OpenSim InverseKinematicsTool              (student)

@@ -1,0 +1,13 @@
+# fetched by get_data.py -- not stored in git
+data/
+_A2_data.zip
+_A2_data_unzip/
+
+# script outputs
+_work/
+knee_angle_stride.png
+opensim.log
+
+# python
+__pycache__/
+*.pyc

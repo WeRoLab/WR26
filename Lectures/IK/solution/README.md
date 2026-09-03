@@ -7,7 +7,7 @@ activity.  Build/verify this first; the student-facing version lives in
 ## Run
 
 ```
-cd "IK Learning Module"
+cd Lectures/IK
 pip install -r requirements.txt
 python get_data.py            # one-time: fetch Data/ OpenSim/ "Python Documentation/"
 

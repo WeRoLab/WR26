@@ -23,7 +23,7 @@ level up in `../solution/`.
 ## First-time setup
 
 ```
-cd "IK Learning Module"
+cd Lectures/IK
 pip install -r requirements.txt
 python get_data.py            # downloads Data/ OpenSim/ "Python Documentation/"  (~190 MB, once)
 ```
@@ -31,7 +31,7 @@ python get_data.py            # downloads Data/ OpenSim/ "Python Documentation/"
 ## Run order
 
 ```
-cd "IK Learning Module/activity"
+cd Lectures/IK/activity
 python s0_prepare_data.py     # given, just run it
 python s1_prepare_model.py    # given, just run it
 python s2_opensim_ik.py       # after you finish s2

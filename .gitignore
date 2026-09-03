@@ -1,4 +1,4 @@
-# Repo-wide ignores.  Each module (IK/, OpenSim_Python_Examples_Tutorials/) also
+# Repo-wide ignores.  Each module (Lectures/IK/, Examples/, Assignments/A2/) also
 # has its own .gitignore for path-specific data and outputs.
 
 # ---- Python ----

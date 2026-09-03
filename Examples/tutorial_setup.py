@@ -25,8 +25,8 @@ import os
 import shutil
 from pathlib import Path
 
-#: Absolute path to this folder (``OpenSim_Python_Examples_Tutorials``).  Resolved
-#: once, at import time, so it stays valid after ``prepare`` calls ``os.chdir``.
+#: Absolute path to this folder (``Examples``).  Resolved once, at import time,
+#: so it stays valid after ``prepare`` calls ``os.chdir``.
 ROOT = Path(__file__).resolve().parent
 
 RESOURCES = ROOT / "resources"

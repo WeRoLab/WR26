@@ -7,7 +7,7 @@ nonlinear least squares. Then, compare them and connect the result to
 a wearable robot design.
 
 ```
-IK Learning Module/
+Lectures/IK/
 ├── environment.md         venv + package versions + how to run
 ├── requirements.txt       pip dependencies
 ├── get_data.py            downloads the data / model / tutorials (see Setup)
