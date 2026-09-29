@@ -102,6 +102,16 @@ dynamics answer and against Winter's textbook data.
 Run order: `Data/OpenSim_Tutorial3/Python/scale_ik_id.py` →
 `Assignments/A3/calculate_knee_torque.py`.
 
+### `Assignments/A5/` — graded assignment: DC motor selection for an elbow prosthesis
+
+- `trajectory_generator.py` — given: Python port of the former MATLAB
+  `TrajectoryGenerator.m`. `gen_trajectory(x, t, n)` solves the 7x7 system for
+  a 6th-order polynomial meeting `[x0, xf, xm, xd0, xdf, xdd0, xddf]` (mid
+  point at `(t0+tf)/2`) and returns `time` and a `(3, n)` position/velocity/
+  acceleration array. Run directly for a demo plot + constraint check. Students
+  write the inverse dynamics, motor feasible region, voltages, and energy.
+  Only needs numpy + matplotlib.
+
 ### `Data/OpenSim_Tutorial3/`
 
 A standalone reproduction of OpenSim's official Tutorial 3 (Scale/IK/ID),
