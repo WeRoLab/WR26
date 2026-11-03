@@ -10,7 +10,7 @@ feeds a wearable-robot design. Meant to be handed to students.
 | folder | what it is | start at |
 |--------|------------|----------|
 | [`Examples/`](Examples/) | **Reference material.** Eight guided OpenSim 4.6 Jupyter tutorials (modeling &rarr; simulation &rarr; scaling/IK/ID &rarr; static optimization &rarr; Moco optimal control) plus ~35 standalone API example scripts. Ported from the OpenSim project's conda/Colab notebooks to run locally against a pip-installed `opensim`. Also used as "ground truth" for LLM-assisted work. | [`README.md`](Examples/README.md) |
-| [`Lectures/`](Lectures/) | **In-class activities.** `IK/` -- compute sit-to-stand joint angles from marker data two ways (the OpenSim `InverseKinematicsTool` and a hand-built 4-DOF planar model solved by nonlinear least squares), then compare and connect to a wearable-robot design. `solution/` = complete instructor pipeline; `activity/` = student version with blanks. | [`IK/README.md`](Lectures/IK/README.md), then [`IK/activity/handout.md`](Lectures/IK/activity/handout.md) |
+| [`Lectures/`](Lectures/) | **In-class activities.** `IK/` -- compute sit-to-stand joint angles from marker data two ways (the OpenSim `InverseKinematicsTool` and a hand-built 4-DOF planar model solved by nonlinear least squares), then compare and connect to a wearable-robot design. `solution/` = complete instructor pipeline; `activity/` = student version with blanks. `CVX_Examples/` -- short convex-optimization demos, each in MATLAB (CVX/CVXGEN) and Python (cvxpy), side by side: Fourier-series fit of a gait curve (L2 vs. L1 with an outlier), minimum-jerk signal smoothing, and DC-motor control with LQR and a CVXGEN-generated MPC solver. | [`IK/README.md`](Lectures/IK/README.md), then [`IK/activity/handout.md`](Lectures/IK/activity/handout.md); [`CVX_Examples/README.md`](Lectures/CVX_Examples/README.md) |
 | [`Data/`](Data/) | **Bundled pipeline data.** `OpenSim_Tutorial3/` -- a standalone reproduction of OpenSim's official Tutorial 3 (Scaling, Inverse Kinematics, Inverse Dynamics), run via the Python API (`Python/scale_ik_id.py`) with its own subject data/geometry committed so it runs without a fetch step. Feeds `Assignments/A3/`. | [`OpenSim_Tutorial3/README.md`](Data/OpenSim_Tutorial3/README.md) |
 | [`Assignments/`](Assignments/) | **Graded assignments.** `A2/` -- knee angle during a walking stride, computed two ways (anatomical reference frames vs. OpenSim `ScaleTool` + `InverseKinematicsTool`), on the Alizadeh et al. (2025) whole-body dataset. Student Python with `TODO` blanks; data fetched by `get_data.py`. `A3/` -- right knee torque from first principles (bottom-up Newton-Euler, foot + shank segments), companion to `Data/OpenSim_Tutorial3/`; `calculate_knee_torque.py` loads joint angles, ground reaction forces, and the 2-segment model's own dimensions and joint-angle kinematics, so the derivation itself is the only thing left to write. `A5/` -- DC motor selection for an elbow prosthesis; `trajectory_generator.py` gives a 6th-order polynomial position/velocity/acceleration trajectory for the inverse dynamics. | [`A2/README.md`](Assignments/A2/README.md), [`A3/README.md`](Assignments/A3/README.md), [`A5/README.md`](Assignments/A5/README.md) |
 
@@ -25,13 +25,17 @@ python -m venv .venv           # or wherever you keep venvs
 pip install -r Examples/requirements.txt
 pip install -r Lectures/IK/requirements.txt
 pip install -r Assignments/A2/requirements.txt
+pip install -r Lectures/CVX_Examples/requirements.txt
 ```
 
 - **OpenSim** installs from PyPI (`pip install opensim`, 4.6+, includes Moco;
   wheels for Windows / macOS / Linux, Python 3.11-3.13). No conda needed. On a
   platform with no wheel, `conda install opensim-org::opensim` into the same env.
 - Each module pins its own `requirements.txt`; the union is
-  `opensim numpy scipy matplotlib pandas scikit-learn ipywidgets jupyterlab gdown`.
+  `opensim numpy scipy matplotlib pandas scikit-learn ipywidgets jupyterlab gdown cvxpy control`.
+- `Lectures/CVX_Examples/` also has MATLAB versions of each demo, which need
+  MATLAB, the Control System Toolbox, and [CVX](https://cvxr.com/cvx/download/).
+  See its README.
 
 ## Data
 

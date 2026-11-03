@@ -1,0 +1,9 @@
+# MATLAB Drive sync metadata
+.MATLABDriveTag
+
+# Recreated by MPC/cvxgen/cvxgen.m when the solver is re-downloaded
+MPC/cvxgen/cvxgen.zip
+MPC/cvxgen/cvxgen/
+
+# MATLAB autosave
+*.asv

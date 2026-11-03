@@ -19,6 +19,7 @@ python -m venv .venv
 # macOS / Linux:  source .venv/bin/activate
 pip install -r Examples/requirements.txt
 pip install -r Assignments/A2/requirements.txt
+pip install -r Lectures/CVX_Examples/requirements.txt
 ```
 
 `opensim>=4.6` (includes Moco) installs from PyPI on Windows/macOS/Linux for
@@ -130,6 +131,27 @@ below). Distinct from `Examples/resources/Tutorial 3`.
   (`git update-index --skip-worktree <path>`): they're inputs/reference
   outputs that a local pipeline run overwrites in place, and git is told to
   ignore those local changes rather than flag them as modifications.
+
+### `Lectures/CVX_Examples/` — convex-optimization demos, MATLAB + Python
+
+Standalone lecture scripts: `Fourier_Transform_Truncated/` (least-squares
+Fourier fit of the Winter 1983 ankle angle; the outlier variant compares
+L2/L1), `Signal_Smoothing/` (minimum-jerk smoothing, two solvers compared),
+and `MPC/` (DC-motor LQR in `StateFeedback_LQR`; `cvxgen/` holds the MPC QP).
+
+- Every `.m` has a Python twin beside it (`main_fourier.py`, `Smoothing.py`,
+  `StateFeedback_LQR.py`, `cvxgen/example_use.py`) with matching variable
+  names, comments and plots. Python uses cvxpy for every optimization,
+  `control.lqr` for LQR, and Clarabel for the MPC (OSQP returns
+  "inaccurate" on its random unstable systems). Keep the two versions in
+  sync when changing either; they agree with MATLAB to ~1e-14.
+- MATLAB needs the Control System Toolbox and CVX (not installed on every
+  machine; the scripts that need it fail or warn without it). Run each `.m`
+  from its own folder. Everything in `MPC/cvxgen/` except `ExampleUse.m` and
+  `example_use.py` is CVXGEN-generated: don't edit it; regenerate from
+  `description.cvxgen` on cvxgen.com instead.
+- Verify with `MPLBACKEND=Agg python <script>.py` (runs from any folder) and
+  `matlab -batch` from each `.m` script's folder.
 
 ### `.gitignore` layering
 

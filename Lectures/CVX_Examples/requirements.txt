@@ -1,0 +1,13 @@
+# Python versions of the CVX_Examples demos.  Install into the class venv ("WR26"):
+#     python -m venv .venv && .venv\Scripts\activate      (Windows)
+#     pip install -r requirements.txt
+#
+# Versions below are the ones these scripts were validated against
+# (numpy 2.5, scipy 1.18, matplotlib 3.11, cvxpy 1.9, control 0.10);
+# the lower bounds are what actually matters.
+
+numpy>=2.0
+scipy>=1.11
+matplotlib>=3.8
+cvxpy>=1.5            # ships the Clarabel, OSQP and SCS solvers
+control>=0.10         # control.lqr, control.ctrb  (StateFeedback_LQR.py)
