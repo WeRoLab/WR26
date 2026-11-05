@@ -11,3 +11,4 @@ scipy>=1.11
 matplotlib>=3.8
 cvxpy>=1.5            # ships the Clarabel, OSQP and SCS solvers
 control>=0.10         # control.lqr, control.ctrb  (StateFeedback_LQR.py)
+opensim>=4.6          # Inverse_Dynamics_Kuo98/ only; else conda install opensim-org::opensim

@@ -19,6 +19,29 @@ env/
 results/
 _work/
 
+# ---- PDFs and LaTeX build products ----
+# Only .tex/.bib sources are tracked; students compile PDFs locally.
+# (Script-generated PDF reports are covered here too.)
+*.pdf
+*.aux
+*.bbl
+*.bcf
+*.blg
+*.dvi
+*.fdb_latexmk
+*.fls
+*.lof
+*.lot
+*.nav
+*.out
+*.run.xml
+*.snm
+*.synctex.gz
+*.synctex(busy)
+*.toc
+*.vrb
+*.xdv
+
 # ---- MATLAB scratch ----
 *.asv
 *.m~

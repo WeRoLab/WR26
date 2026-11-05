@@ -152,6 +152,17 @@ and `MPC/` (DC-motor LQR in `StateFeedback_LQR`; `cvxgen/` holds the MPC QP).
   `description.cvxgen` on cvxgen.com instead.
 - Verify with `MPLBACKEND=Agg python <script>.py` (runs from any folder) and
   `matlab -batch` from each `.m` script's folder.
+- `Inverse_Dynamics_Kuo98/` is the exception: Python + OpenSim only, no `.m`.
+  It is an in-class activity reproducing Kuo (1998), least-squares inverse
+  dynamics, against `Kuo1998.tex`, a condensed copy with corrected equations.
+  - `four_segment_model.py`: the Appendix A equations.
+  - `four_segment_opensim.py`: the same model in OpenSim, which generates
+    the truth data. Run directly, it must print PASS on all of its
+    equation-vs-OpenSim checks.
+  - `least_squares_id.py`: student file, shipped with its cvxpy TODOs
+    unfilled. The filled-in solution lives outside the repo in
+    `WR26/Lectures/L18 Kuo98 activity solution/`; copy it into this folder
+    to verify. With `SEED = 0` it expects NE 7.91 vs. LS 4.23 N·m overall.
 
 ### `.gitignore` layering
 
