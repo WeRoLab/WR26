@@ -164,6 +164,25 @@ and `MPC/` (DC-motor LQR in `StateFeedback_LQR`; `cvxgen/` holds the MPC QP).
     `WR26/Lectures/L18 Kuo98 activity solution/`; copy it into this folder
     to verify. With `SEED = 0` it expects NE 7.91 vs. LS 4.23 N·m overall.
 
+### `Lectures/L19 IMU Drift/` — IMU orientation drift, MATLAB + Python
+
+Plots azimuth/pitch/roll of a tablet left still on a table for ~16.5 min
+(MATLAB Mobile, ~10 Hz); the angles should be constant, so any trend is drift.
+
+- `DataCollectionDrift.mat` is the raw MATLAB Mobile recording: a timetable,
+  which `scipy.io.loadmat` can't read. `convert_drift_data.m` re-saves it as
+  plain arrays (`time` [s], `X`/`Y`/`Z` [deg], `start_time` text) in
+  `DataCollectionDrift_arrays.mat` (`-v7`). Rerun it only for new recordings.
+- Both `.mat` files are committed, static inputs (`.gitattributes`:
+  `*.mat binary`). MATLAB stamps the save date into every MAT-file, so
+  regenerating makes a "modified" binary even with identical data; the
+  convert script therefore refuses to overwrite an existing arrays file.
+  If a `.mat` shows up modified by accident, `git restore` it.
+- `main_IMU_Drift.m` and its twin `main_IMU_Drift.py` both read the arrays
+  file and draw the same 3-subplot figure. Keep them in sync.
+- Verify with `MPLBACKEND=Agg python main_IMU_Drift.py` (from any folder) and
+  `matlab -batch main_IMU_Drift` from the folder.
+
 ### `.gitignore` layering
 
 The root `.gitignore` covers repo-wide junk (bytecode, venvs, `.ipynb_checkpoints`,

@@ -1,0 +1,2 @@
+# MATLAB data files: never diff, merge or convert line endings
+*.mat binary
