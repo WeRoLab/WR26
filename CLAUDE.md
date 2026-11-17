@@ -31,6 +31,7 @@ Python 3.11–3.13 — no conda needed. On a platform with no wheel, use
 Large binaries are **not** committed. Each module fetches its own data on demand:
 
 - `python Assignments/A2/get_data.py` — ~5 MB motion capture + model, from Google Drive → gitignored `data/`
+- `python Assignments/A7/get_data.py` — ~5 MB `TF01.mat` (prosthesis sensors), from Google Drive → gitignored `data/`
 - `python Examples/examples/get_example_data.py` — Moco example data, from the pinned OpenSim source
 
 `Examples/` tutorials need no fetch step; their inputs are bundled under `resources/`.
@@ -112,6 +113,26 @@ Run order: `Data/OpenSim_Tutorial3/Python/scale_ik_id.py` →
   acceleration array. Run directly for a demo plot + constraint check. Students
   write the inverse dynamics, motor feasible region, voltages, and energy.
   Only needs numpy + matplotlib.
+
+### `Assignments/A7/` — graded assignment: phase variable from a thigh IMU
+
+Data: `TF01.mat`, one transfemoral subject from Elery et al. (2020) (complete
+dataset on IEEE DataPort, CC BY 4.0), fetched by `get_data.py` from a
+link-shared Google Drive file (`WR26/Assignments/A7/MATLAB/TF01.mat` in the
+instructor's Drive; moving it keeps the ID, deleting it breaks the download).
+
+- `phase_variable.py` — given: `load_leg2data()` returns
+  `{group: {signal: (31 strides, 101 samples)}}` from `TF01.Leg2Data`
+  (strides are rows: the transpose of MATLAB), plus `print_sensors()` and
+  `plot_sensor()`. Students fill TODO 1–3 in `main()`; unedited, it stops
+  cleanly at TODO 1. Its demo plot is deliberately `Knee.Angle`, and nothing
+  in this repo (code, README, or this file) may name the thigh signals or
+  their units: identifying them is question 1. The answers are in the answer
+  key, outside the repo.
+- The answer key lives outside the repo, in
+  `WR26/Assignments/A7 - Solution/` (`a7_solution.py` imports
+  `load_leg2data` from here); it also writes the statement's expected-phase
+  figure. Change the loader's return format there too.
 
 ### `Data/OpenSim_Tutorial3/`
 

@@ -1,0 +1,9 @@
+# fetched by get_data.py -- not stored in git
+data/
+
+# script outputs
+*.png
+
+# python
+__pycache__/
+*.pyc

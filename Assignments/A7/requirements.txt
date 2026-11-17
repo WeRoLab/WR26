@@ -1,0 +1,6 @@
+# Assignment 7 -- Python environment
+# Install into the course venv:   pip install -r requirements.txt
+numpy>=2.0,<3
+scipy>=1.11
+matplotlib>=3.8
+gdown>=5.1
